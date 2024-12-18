@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PutHype - Iniciar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logosolo.png" type="image/x-icon">
+    <script type="module" src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="login-container" class="form-container">
+        <div id="blinking-image-container">
+            <img src="assets/eclipse1.png" alt="Imagem Piscante" id="blinking-image">
+        </div>
+        <div class="login-container-img">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        <div class="form-box">
+            <h2>Login</h2>
+            <input id="login-email" type="email" placeholder="E-mail" required>
+            <input id="login-password" type="password" placeholder="Senha" required>
+            <div class="esqueceu">
+                <a href="#" onclick="handleResetPassword()">Esqueceu a senha?</a>
+            </div>
+            <button onclick="handleLogin()">Entrar</button>
+          
+            <p>Não tem uma conta? <a href="#" onclick="toggleForm()">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <div id="register-container" class="form-container" style="display: none;">
+        <div id="blinking-image-container">
+            <img src="assets/eclipse1.png" alt="Imagem Piscante" id="blinking-image">
+        </div>
+        <div class="login-container-img">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        
+        <!-- Primeiro passo: Dados de cadastro -->
+        <div id="register-step-1">
+            <h2>Cadastro</h2>
+            <input id="register-name" type="text" placeholder="Nome e Sobrenome" required>
+            <input id="register-phone" type="text" placeholder="Telefone" required>
+            <input id="register-username" type="text" placeholder="Nome de Usuário" required>
+            <input id="register-email" type="email" placeholder="E-mail" required>
+            <input id="register-password" type="password" placeholder="Senha" required>
+            <button onclick="goToAvatarSelection()">Próxima Etapa</button>
+            <p>Já tem uma conta? <a href="#" onclick="toggleForm()">Faça login</a></p>
+        </div>
+    
+        <!-- Segundo passo: Escolha de avatar -->
+        <div id="register-step-2" style="display: none;">
+            <h3>Escolha um Avatar</h3>
+            <div id="avatar-container">
+                <img src="assets/avatares/1.jpg" alt="Avatar 1" class="avatar-option" onclick="selectAvatar(1)">
+                <img src="assets/avatares/2.jpg" alt="Avatar 2" class="avatar-option" onclick="selectAvatar(2)">
+                <img src="assets/avatares/3.jpg" alt="Avatar 3" class="avatar-option" onclick="selectAvatar(3)">
+                <img src="assets/avatares/4.jpg" alt="Avatar 4" class="avatar-option" onclick="selectAvatar(4)">
+                <img src="assets/avatares/5.jpg" alt="Avatar 5" class="avatar-option" onclick="selectAvatar(5)">
+                <img src="assets/avatares/6.jpg" alt="Avatar 6" class="avatar-option" onclick="selectAvatar(6)">
+                <img src="assets/avatares/7.jpg" alt="Avatar 7" class="avatar-option" onclick="selectAvatar(7)">
+                <img src="assets/avatares/8.jpg" alt="Avatar 8" class="avatar-option" onclick="selectAvatar(8)">
+                <img src="assets/avatares/9.jpg" alt="Avatar 9" class="avatar-option" onclick="selectAvatar(9)">
+            </div>
+            <input type="hidden" id="selected-avatar" value="">
+            <button id="register-button" onclick="handleRegister()" disabled>Cadastrar</button>
+            <p>Já tem uma conta? <a href="#" onclick="toggleForm()">Faça login</a></p>
+        </div>
+    </div>
+    
+
+    <img id="background-image" src="assets/black_4 2.png" alt="Background Image">
+</body>
+
+</html>
